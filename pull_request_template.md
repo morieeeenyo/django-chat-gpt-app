@@ -1,6 +1,6 @@
 # やったこと
 
-# 目的
+related issue: xxx
 
 # 動作確認結果
 
