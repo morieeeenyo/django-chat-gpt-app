@@ -4,14 +4,13 @@ from django.db import migrations
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('api', '0001_initial'),
+        ("api", "0001_initial"),
     ]
 
     operations = [
         migrations.RenameModel(
-            old_name='Thread',
-            new_name='Threads',
+            old_name="Thread",
+            new_name="Threads",
         ),
     ]
