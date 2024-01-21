@@ -19,6 +19,6 @@ from django.urls import path, include
 from api.urls import router as api_router
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('threads/', include(api_router.urls)),
+    path("admin/", admin.site.urls),
+    path("threads/", include(api_router.urls)),
 ]

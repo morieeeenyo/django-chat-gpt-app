@@ -9,4 +9,3 @@ from .serializers import *
 class ThreadAPIView(viewsets.ModelViewSet):
     queryset = Threads.objects.all()
     serializer_class = ThreadSerializer
-
