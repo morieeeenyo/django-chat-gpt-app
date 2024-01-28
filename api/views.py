@@ -6,6 +6,6 @@ from .serializers import ThreadSerializer
 # Create your views here.
 
 
-class ThreadAPIView(viewsets.ModelViewSet):
+class ThreadViewSet(viewsets.ModelViewSet):
     queryset = Threads.objects.all()
     serializer_class = ThreadSerializer
