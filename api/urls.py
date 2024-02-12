@@ -4,3 +4,9 @@ from . import views
 
 router = routers.DefaultRouter()
 router.register(r"threads", views.ThreadViewSet)
+
+urlpatterns = [
+    path("messages/", views.MessageView.as_view()),
+]
+
+urlpatterns += router.urls
