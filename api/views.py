@@ -1,8 +1,10 @@
 from django.shortcuts import render
 from rest_framework import viewsets, views
 from .models import Threads
+from django.http import HttpResponse
 from .serializers import ThreadSerializer
 import sys
+import json
 
 sys.path.append("../")
 from utils.openai.create_message import chat_gpt, create_prompt
@@ -24,7 +26,6 @@ class MessageView(views.APIView):
         # Chat-GPTへリクエストを投げる
         response = chat_gpt(prompt)
         # 辞書型データを作成する
-        context = {
-            "input_text": input_text,
-            "response": response,
-        }
+        response_obj = {"data": response}
+        json_str = json.dumps(response_obj, ensure_ascii=False, indent=2)
+        return HttpResponse(json_str)
