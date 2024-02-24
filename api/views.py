@@ -20,7 +20,9 @@ class ThreadViewSet(viewsets.ModelViewSet):
 class MessageView(views.APIView):
     def post(self, request):
         # 画面に入力した文章を取得
-        input_text = request.POST["input_text"]
+        input_text = request.data["input_text"]
+        print(request.POST)
+        print(request.data)
         # Chat-GPTに投げる命令文を生成
         prompt = create_prompt(input_text, "GrammarCorrection.txt")
         # Chat-GPTへリクエストを投げる

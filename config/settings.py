@@ -1,3 +1,4 @@
+from .local_settings import *
 from dotenv import load_dotenv
 
 load_dotenv()
@@ -41,9 +42,11 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "api",
     "rest_framework",
+    "corsheaders",
 ]
 
 MIDDLEWARE = [
+    "corsheaders.middleware.CorsMiddleware",
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
@@ -52,6 +55,14 @@ MIDDLEWARE = [
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
 ]
+
+# 自身以外のオリジンのHTTPリクエスト内にクッキーを含めることを許可する
+CORS_ALLOW_CREDENTIALS = True
+# アクセスを許可したいURL（アクセス元）を追加
+CORS_ALLOWED_ORIGINS = os.getenv("TRUSTED_ORIGINS").split(" ")
+# プリフライト(事前リクエスト)の設定
+# 30分だけ許可
+CORS_PREFLIGHT_MAX_AGE = 60 * 30
 
 ROOT_URLCONF = "config.urls"
 
