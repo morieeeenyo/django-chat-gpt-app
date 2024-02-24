@@ -24,7 +24,8 @@ class MessageView(views.APIView):
         print(request.POST)
         print(request.data)
         # Chat-GPTに投げる命令文を生成
-        prompt = create_prompt(input_text, "GrammarCorrection.txt")
+        # prompt = create_prompt(input_text, "GrammarCorrection.txt")
+        prompt = create_prompt(input_text, "SummarizeText.txt")
         # Chat-GPTへリクエストを投げる
         response = chat_gpt(prompt)
         # 辞書型データを作成する
