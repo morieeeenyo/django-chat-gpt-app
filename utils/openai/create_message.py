@@ -10,11 +10,6 @@ def chat_gpt(prompt):
     # APIを使ってリクエストを投げる
     response = client.chat.completions.create(
         model="gpt-3.5-turbo",
-        temperature=0,
-        max_tokens=300,
-        top_p=1.0,
-        frequency_penalty=0.0,
-        presence_penalty=0.0,
         messages=[
             {"role": "user", "content": prompt},
         ],
