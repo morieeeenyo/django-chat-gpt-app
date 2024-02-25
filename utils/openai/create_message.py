@@ -16,7 +16,6 @@ def chat_gpt(prompt):
         frequency_penalty=0.0,
         presence_penalty=0.0,
         messages=[
-            {"role": "system", "content": "あなたはベテランの校閲者です。"},
             {"role": "user", "content": prompt},
         ],
     )
