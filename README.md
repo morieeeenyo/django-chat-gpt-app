@@ -58,5 +58,4 @@ python3 manage.py runserver
 
 - POST /api/messages
 
-# 動作イメージ
-以下のように
+
